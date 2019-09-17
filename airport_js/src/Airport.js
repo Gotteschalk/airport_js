@@ -17,3 +17,9 @@ Airport.prototype.takeOff = function(plane) {
 function Plane(name) {
   this.name = name
 };
+
+function Weather() {
+  var weatherArray = ['sunny', 'stormy'];
+  this.state = weatherArray[Math.floor(Math.random() * weatherArray.length)];
+  return this.state;
+};

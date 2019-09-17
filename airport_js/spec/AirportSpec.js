@@ -32,3 +32,17 @@ describe('Airport', function() {
     expect(airport.planes.length).toEqual(0);
   });
 });
+
+describe('Weather', function() {
+  beforeEach(function() {
+    weather = new Weather ();
+  });
+
+  it('is either stormy or sunny', function() {
+    var result = []
+    for(i=1; i <= 100; i++) {
+      result.push(new Weather().state);
+    }
+    expect(result).toContain('stormy' && 'sunny')
+  });
+});
