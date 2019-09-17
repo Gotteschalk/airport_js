@@ -21,6 +21,11 @@ describe('Airport', function() {
     expect(airport.planes).toContain(plane);
   });
 
+  it('raises and error if a plane tries to land at a full airport', function() {
+    for(i=1; i <= airport.capacity; i++) { airport.landPlane(plane) }
+    expect(function() {airport.landPlane(plane)}).toThrow('Airport full: Unable to land plane')
+  });
+
   it('allow a plane to take off', function() {
     airport.landPlane(plane)
     airport.takeOff(plane)

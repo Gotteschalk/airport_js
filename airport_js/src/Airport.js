@@ -4,6 +4,7 @@ function Airport(capacity = 20) {
 };
 
 Airport.prototype.landPlane = function(plane) {
+  if (this.planes.length === this.capacity) throw 'Airport full: Unable to land plane' ;
   this.planes.push(plane);
   return this.planes;
 };
